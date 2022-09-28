@@ -106,3 +106,44 @@ void mostra_posicao_x(int x, Head_d* lista){
 	
 }
 
+int palindromo(Head_d* lista){
+	Elem * aux_ini = lista->inicio;
+	Elem * aux_fim = lista->fim;
+	
+	int count = 0;
+	for(int i = 0; i < lista->tam / 2; i++){
+		if(aux_ini->v == aux_fim->v){
+			count++;
+			aux_ini = aux_ini->prox;
+			aux_fim = aux_fim->ant;
+		}
+		else{
+			return 0; // nao palindromo
+		}
+	}
+	if(count == i){
+		return 1; // palindromo
+	}
+}
+
+int palindromo_aula(Head_d* lista){
+	Elem * aux1 = lista->inicio;
+	Elem * aux2 = lista->inicio;
+	
+	while(aux2->prox != NULL){
+		aux2 = aux2->prox;
+	}
+	
+	while(aux1 != aux2 && aux1->ant ! NULL){
+		if(aux1->v == aux->v){
+			aux1 = aux1->prox;
+			aux2 = aux2->ant;
+		}
+		
+		return 0; // nao palindromo
+	}
+	
+	return 1; // palindromo	
+}
+
+

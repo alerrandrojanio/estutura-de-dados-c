@@ -114,5 +114,25 @@ void inserir_ordenado(int v, Head* lista){
 }
 
 void mostra_posicao_x(int x, Head_d* lista){
+	Elem * aux = lista->inicio;
+	
+	if(head->tam > x){
+		printf("POSICAO N�O EXISTE!")
+	}
+	else{
+		for(int i = 0; i < x; i++){
+			aux = aux->prox;
+		}
+		imprimir_elem(aux);
+	}
+}
+
+void imprimir_reverso(Elem* e){
+	if(e != NULL){
+	}
+	else{
+		imprimir_reverso(e->prox);
+		printf("%d", e->v);
+	}
 	
 }
